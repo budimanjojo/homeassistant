@@ -1,0 +1,59 @@
+- platform: switch
+  name: JOJO Bedroom 1
+  entity_id: switch.jojo_bedroom_1
+
+- platform: switch
+  name: JOJO Bedroom 2
+  entity_id: switch.jojo_bedroom_2_l1
+
+- platform: switch
+  name: JOJO Bathroom
+  entity_id: switch.jojo_bedroom_2_l2
+
+- platform: switch
+  name: Front Outdoor
+  entity_id: switch.front_door_2_right
+
+- platform: switch
+  name: Porch
+  entity_id: switch.front_door_1_l2
+
+- platform: switch
+  name: Guest Hallway
+  entity_id: switch.guest_hallway_left
+
+- platform: switch
+  name: Guest Bathroom
+  entity_id: switch.guest_hallway_right
+
+- platform: switch
+  name: Front Staircase
+  entity_id: switch.2nd_livingroom_2_right
+
+- platform: switch
+  name: 1st Livingroom1 1
+  entity_id: switch.1st_livingroom1_2_center
+
+- platform: switch
+  name: 1st Livingroom1 2
+  entity_id: switch.1st_livingroom1_2_left
+
+- platform: switch
+  name: Diningroom Fan
+  entity_id: switch.1st_livingroom2_1_left
+
+- platform: switch
+  name: Diningroom
+  entity_id: switch.1st_livingroom2_1_right
+
+- platform: switch
+  name: 1st Livingroom2
+  entity_id: switch.1st_livingroom2_1_center
+
+- platform: switch
+  name: 2nd Livingroom Fan
+  entity_id: switch.2nd_livingroom_1_right
+
+- platform: switch
+  name: 2nd Livingroom
+  entity_id: switch.2nd_livingroom_1_left

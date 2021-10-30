@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Except these files
+!.gitignore
+!README.md
+!automations.yaml
+!configuration.yaml
+!configurations
+!configurations/*
+!dashboards
+!dashboards/*
+!www
+!www/*
+!www/images
+!www/images/*
+!www/images/*/*

@@ -1,0 +1,24 @@
+- platform: template
+  switches:
+    jojo_bedroom_ac:
+      friendly_name: JOJO Bedroom AC
+      value_template: "{{ is_state('binary_sensor.jojo_bedroom_ac_contact', 'on') }}"
+      turn_on:
+        service: remote.send_command
+        target:
+          entity_id: remote.jojo_bedroom_rm4_mini_remote
+        data:
+          device: jojo_bedroom_ac
+          command: power_on
+      turn_off:
+        service: remote.send_command
+        target:
+          entity_id: remote.jojo_bedroom_rm4_mini_remote
+        data:
+          device: jojo_bedroom_ac
+          command: power_off
+
+- name: JOJO Main PC
+  platform: wake_on_lan
+  mac: b4:2e:99:62:8d:06
+  broadcast_address: 192.168.200.49

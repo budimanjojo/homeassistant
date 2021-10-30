@@ -1,0 +1,131 @@
+####################################################################
+## Home Assistant Core
+####################################################################
+
+homeassistant:
+  customize: !include configurations/customize.yaml
+default_config:
+updater:
+discovery:
+stream:
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+  - "10.244.0.0/16"
+
+####################################################################
+## Components
+####################################################################
+
+lovelace:
+  mode: storage
+  resources:
+  - url: /hacsfiles/button-card/button-card.js
+    type: module
+  - url: /hacsfiles/kiosk-mode/kiosk-mode.js
+    type: module
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
+  - url: /hacsfiles/vacuum-card/vacuum-card.js?hacstag=2612912951230
+    type: module
+  - url: /hacsfiles/zigbee2mqtt-networkmap/zigbee2mqtt-networkmap.js
+    type: module
+  - url: https://fonts.googleapis.com/css?family=Frijole
+    type: css
+  dashboards:
+    lovelace-desktop:
+      mode: yaml
+      title: Desktop
+      icon: mdi:script
+      show_in_sidebar: false
+      filename: dashboards/desktop.yaml
+    lovelace-firehd8:
+      mode: yaml
+      title: FireHD8
+      icon: mdi:script
+      show_in_sidebar: false
+      filename: dashboards/firehd8.yaml
+
+tts:
+- platform: google_translate
+
+proximity:
+  home:
+    devices:
+    - person.budiman
+    - person.lina
+    - person.eunice
+    tolerance: 50
+    unit_of_measurement: m
+
+opnsense:
+  url: !secret opnsense_api_url
+  api_secret: !secret opnsense_api_secret
+  api_key: !secret opnsense_api_key
+  verify_ssl: true
+  tracker_interfaces:
+  - LAN1
+  - SERVER
+
+deebot:
+  username: !secret deebot_username
+  password: !secret deebot_password
+  country: id
+  continent: ww
+  supported_features:
+  - start
+  - pause
+  - stop
+  - return_home
+  - fan_speed
+  - battery
+  - status
+  - send_command
+  - locate
+  - clean_spot
+  - turn_on
+  - turn_off
+
+browser_mod:
+  devices:
+    bfb3bb0f_d8d3f148:
+      name: fire_hd
+  disable:
+  - all
+
+telegram_bot:
+- platform: webhooks
+  trusted_networks: "10.244.0.0/16"
+  api_key: !secret telegram_api_key_0
+  allowed_chat_ids:
+  - !secret telegram_chat_id_0
+
+
+####################################################################
+## Notifications
+####################################################################
+
+notify:
+- platform: telegram
+  name: telegram
+  chat_id: !secret telegram_chat_id_0
+
+####################################################################
+## Includes
+####################################################################
+zone: !include configurations/zones.yaml
+sensor: !include configurations/sensors.yaml
+binary_sensor: !include configurations/binary_sensors.yaml
+switch: !include configurations/switches.yaml
+device_tracker: !include configurations/device_trackers.yaml
+group: !include configurations/groups.yaml
+automation ui: !include automations.yaml
+automation manual: !include_dir_merge_list automation
+script: !include configurations/scripts.yaml
+scene: !include configurations/scenes.yaml
+input_select: !include configurations/input_selects.yaml
+input_boolean: !include configurations/input_booleans.yaml
+person: !include configurations/persons.yaml
+recorder: !include configurations/recorder.yaml
+light: !include configurations/lights.yaml
+template: !include configurations/templates.yaml

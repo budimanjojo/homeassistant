@@ -1,0 +1,44 @@
+everybody:
+  name: Everybody
+  entities:
+  - person.budiman
+  - person.lina
+  - person.eunice
+  - person.alimin
+  - person.sai_pein
+  - person.haryanto
+
+jojo_family:
+  name: JOJO Family
+  entities:
+  - person.budiman
+  - person.lina
+  - person.eunice
+
+jojo_bedroom_lights:
+  name: JOJO Bedroom Lights
+  entities:
+  - light.jojo_bedroom_light_1
+  - light.jojo_bedroom_light_2
+  - light.jojo_bathroom_light
+
+battery_cr2450:
+  name: CR2450 Battery Sensors
+  entities:
+  - sensor.jojo_bathroom_door_battery
+  - sensor.jojo_bedroom_door_battery
+  - sensor.guest_bathroom_door_battery
+
+battery_cr2032:
+  name: CR2032 Battery Sensors
+  entities:
+  - sensor.jojo_bathroom_motion_battery
+  - sensor.jojo_bathroom_temp_battery
+  - sensor.jojo_bedroom_wireless_button_battery
+  - sensor.front_door_motion_battery
+  - sensor.guest_bathroom_motion_battery
+
+battery_cr1632:
+  name: CR1632 Battery Sensors
+  entities:
+  - sensor.front_door_door_battery

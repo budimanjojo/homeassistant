@@ -1,0 +1,32 @@
+- name: Budiman
+  id: budiman
+  user_id: 13febe56dd6443b8937128569c8c365e
+  device_trackers:
+  - !secret opnsense_budiman
+  - device_tracker.jojo_mobile_app
+
+- name: Lina
+  id: lina
+  device_trackers:
+  - !secret opnsense_lina
+  - device_tracker.lina_mobile_app
+
+- name: Eunice
+  id: eunice
+  device_trackers:
+  - !secret opnsense_eunice
+
+- name: Alimin
+  id: alimin
+  device_trackers:
+  - !secret opnsense_alimin
+
+- name: Haryanto
+  id: haryanto
+  device_trackers:
+  - device_tracker.haryanto
+
+- name: Sai Pein
+  id: sai_pein
+  device_trackers:
+  - !secret opnsense_saipein

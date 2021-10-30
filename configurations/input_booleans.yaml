@@ -1,0 +1,7 @@
+jojo_bathroom_occupied:
+  name: JOJO Bathroom Occupancy
+  initial: false
+
+guest_bathroom_occupied:
+  name: Guest Bathroom Occupancy
+  initial: false

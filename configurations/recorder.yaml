@@ -1,0 +1,14 @@
+exclude:
+  domains:
+  - sun
+  - zone
+  - automation
+  - input_number
+  - input_text
+  - person
+  entities:
+  - binary_sensor.updater
+  - binary_sensor.zigbee_router_cc2531_led
+  entity_globs:
+  - sensor.date*
+  - sensor.time*

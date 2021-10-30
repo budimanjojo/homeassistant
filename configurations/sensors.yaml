@@ -1,0 +1,43 @@
+##################################################################################################
+## Deebot 900 Sensors
+##################################################################################################
+- platform: template
+  sensors:
+    fatimah_main_brush_hour:
+      friendly_name: "Vacuum Main Brush Remaining Time"
+      value_template: "{{ (state_attr('vacuum.fatimah', 'component_main_brush')/100)|round|int }}"
+      unit_of_measurement: Hour(s)
+    fatimah_side_brush_hour:
+      friendly_name: "Vacuum Side Brush Remaining Time"
+      value_template: "{{ (state_attr('vacuum.fatimah', 'component_side_brush')/100)|round|int }}"
+      unit_of_measurement: Hour(s)
+    fatimah_filter_hour:
+      friendly_name: "Vacuum Filter Remaining Time"
+      value_template: "{{ (state_attr('vacuum.fatimah', 'component_filter')/100)|round|int }}"
+      unit_of_measurement: Hour(s)
+
+###################################################################################################
+## Zigbee2mqtt Sensors
+###################################################################################################
+- platform: mqtt
+  name: Zigbee2mqtt Networkmap
+  state_topic: zigbee2mqtt/bridge/networkmap/raw
+  value_template: ""
+  json_attributes_topic: zigbee2mqtt/bridge/networkmap/raw
+
+###################################################################################################
+## Time and Date Sensors
+###################################################################################################
+- platform: time_date
+  display_options:
+  - date_time_iso
+- platform: template
+  sensors:
+    date_formatted:
+      friendly_name: "Formatted Date"
+      value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%a, %b %d %Y') }}"
+      icon_template: mdi:calendar-clock
+    time_formatted:
+      friendly_name: "Formatted Time"
+      value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%I:%M %p') }}"
+      icon_template: mdi:calendar-clock

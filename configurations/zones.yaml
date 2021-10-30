@@ -1,0 +1,10 @@
+- name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 25
+  icon: mdi:home
+- name: Shop
+  latitude: !secret shop_latitude
+  longitude: !secret shop_longitude
+  radius: 25
+  icon: mdi:store
