@@ -6,6 +6,7 @@
 !README.md
 !automations.yaml
 !configuration.yaml
+!secrets.yaml
 !configurations
 !configurations/*
 !dashboards
