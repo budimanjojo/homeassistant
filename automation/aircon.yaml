@@ -1,0 +1,25 @@
+###########################################################################
+## Air Conditioner Automations
+###########################################################################
+
+# Turn Off JOJO Bedroom AC When Nobody at Home
+- id: turn_off_jojo_bedroom_ac_nobody_home
+  alias: Turn Off JOJO Bedroom AC When Nobody at Home
+
+  trigger:
+  - platform: state
+    entity_id: group.jojo_family
+    to: 'not_home'
+
+  condition:
+  - condition: state
+    entity_id: binary_sensor.jojo_bedroom_ac_contact
+    state: 'on'
+
+  action:
+  - service: remote.send_command
+    target:
+      entity_id: remote.jojo_bedroom_rm4_mini_remote
+    data:
+      device: jojo_bedroom_ac
+      command: power_on

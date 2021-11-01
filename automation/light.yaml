@@ -1,0 +1,272 @@
+##########################################################################i
+## Light Automations
+###########################################################################
+
+# Turn On Front Outdoor Light at Night
+- id: turn_on_front_outdoor_light_at_night
+  alias: Turn On Front Outdoor Light at Night
+
+  trigger:
+  - platform: time_pattern
+    minutes: '/5'
+
+  condition:
+  - condition: time
+    after: '18:59:59'
+    before: '04:00:01'
+  - condition: state
+    entity_id: light.front_outdoor
+    state: 'off'
+  - condition: state
+    entity_id: group.everybody
+    state: 'home'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.front_outdoor
+
+# Turn Off Front Outdoor Light in the Morning
+- id: turn_off_front_outdoor_light_in_morning
+  alias: Turn Off Front Outdoor Light in the Morning
+
+  trigger:
+  - platform: time
+    at: '05:00:00'
+
+  condition:
+  - condition: state
+    entity_id: light.front_outdoor
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.front_outdoor
+
+# Turn On Front Staircase Light at Night
+- id: turn_on_front_staircase_light_at_night
+  alias: Turn On Front Staircase Light at Night
+
+  trigger:
+  - platform: time_pattern
+    minutes: '/5'
+
+  condition:
+  - condition: time
+    after: '17:29:59'
+    before: '04:00:01'
+  - condition: state
+    entity_id: light.front_staircase
+    state: 'off'
+  - condition: state
+    entity_id: group.everybody
+    state: 'home'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.front_staircase
+
+# Turn Off Front Staircase Light in the Morning
+- id: turn_off_front_staircase_light_in_morning
+  alias: Turn Off Front Staircase Light in the Morning
+
+  trigger:
+  - platform: time
+    at: '05:00:00'
+
+  condition:
+  - condition: state
+    entity_id: light.front_staircase
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.front_staircase
+
+# Turn Off Porch Light If Being On for Too Long
+- id: turn_off_porch_light_on_for_too_long
+  alias: Turn Off Porch Light If Being On for Too Long
+
+  trigger:
+  - platform: time_pattern
+    minutes: '/5'
+
+  condition:
+  - condition: state
+    entity_id: light.porch
+    state: 'on'
+    for: '00:20'
+  # Only When the Door is already Closed
+  - condition: state
+    entity_id: binary_sensor.front_door_door_contact
+    state: 'off'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.porch
+
+# Turn On JOJO Bathroom Light When Occupied
+- id: turn_on_jojo_bathroom_light_occupied
+  alias: Turn On JOJO Bathroom Light When Occupied
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.jojo_bathroom_occupancy
+    to: 'on'
+
+  condition:
+  - condition: state
+    entity_id: light.jojo_bathroom
+    state: 'off'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.jojo_bathroom
+
+# Turn On Guest Bathroom Light When Occupied
+- id: turn_on_guest_bathroom_light_occupied
+  alias: Turn On Guest Bathroom Light When Occupied
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.guest_bathroom_occupancy
+    to: 'on'
+
+  condition:
+  - condition: state
+    entity_id: light.guest_bathroom
+    state: 'off'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.guest_bathroom
+
+# Turn Off JOJO Bathroom Light When Not Occupied
+- id: turn_off_jojo_bathroom_light_unoccupied
+  alias: Turn Off JOJO Bathroom Light When Not Occupied
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.jojo_bathroom_occupancy
+    to: 'off'
+    for: '00:05:00'
+
+  condition:
+  - condition: state
+    entity_id: light.jojo_bathroom
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.jojo_bathroom
+
+# Turn Off Guest Bathroom Light When Not Occupied
+- id: turn_off_guest_bathroom_light_unoccupied
+  alias: Turn Off Guest Bathroom Light When Not Occupied
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.guest_bathroom_occupancy
+    to: 'off'
+    for: '00:05:00'
+
+  condition:
+  - condition: state
+    entity_id: light.guest_bathroom
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.guest_bathroom
+
+# Turn On JOJO Bedroom Hallway Light at Night
+- id: turn_on_jojo_bedroom_hallway_light_at_night
+  alias: Turn On JOJO Bedroom Hallway Light at Night
+
+  trigger:
+  - platform: time_pattern
+    minutes: '/5'
+
+  condition:
+  - condition: time
+    after: '18:59:59'
+    before: '23:00:01'
+  - condition: state
+    entity_id: light.jojo_bedroom_2
+    state: 'off'
+  - condition: state
+    entity_id: group.jojo_family
+    state: 'home'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.jojo_bedroom_2
+
+# Turn Off JOJO Bedroom Hallway Light in the Morning
+- id: turn_off_jojo_bedroom_hallway_light_in_morning
+  alias: Turn Off JOJO Bedroom Hallway Light in the Morning
+
+  trigger:
+  - platform: time
+    at: '08:00:00'
+
+  condition:
+  - condition: state
+    entity_id: light.jojo_bedroom_2
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.jojo_bedroom_2
+
+# Turn Off JOJO Bedroom Lights When Nobody at Home
+- id: turn_off_jojo_bedroom_light_nobody_home
+  alias: Turn Off JOJO Bedroom Lights When Nobody at Home
+
+  trigger:
+  - platform: state
+    entity_id: group.jojo_family
+    to: 'not_home'
+
+  condition:
+  - condition: state
+    entity_id: group.jojo_bedroom_lights
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: group.jojo_bedroom_lights
+
+# Toggle Front Staircase Light Like 3 Way Switch
+- id: toggle_front_staircase_light_3_way
+  alias: Toggle Front Staircase Light Like 3 Way Switch
+
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.1st_livingroom1_2_right
+    - switch.front_door_2_left
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id:
+    - switch.1st_livingroom1_2_right
+    - switch.front_door_2_left
+    from: 'off'
+    to: 'on'
+
+  action:
+  - service: light.toggle
+    target:
+      entity_id: light.front_staircase

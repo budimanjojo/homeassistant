@@ -1,0 +1,17 @@
+###########################################################
+## Button Automations
+###########################################################
+
+# JOJO Bedroom Wireless Switch Button Single Click
+- id: jojo_bedroom_wireless_switch_button_single
+  alias: JOJO Bedroom Wireless Switch Button Single Click
+
+  trigger:
+  - platform: state
+    entity_id: sensor.jojo_bedroom_wireless_switch_action
+    to: single
+
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.jojo_bedroom_ac

@@ -1,0 +1,69 @@
+# Turn On Porch Light When Motion Detected in Dark
+- id: turn_on_porch_light_modect_dark
+  alias: Turn On Porch Light When Motion Detected in Dark
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_motion_occupancy
+    to: 'on'
+
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.front_door_motion_illuminance_lux
+    below: 5
+  # Only When the Door is Closed
+  - condition: state
+    entity_id: binary_sensor.front_door_door_contact
+    state: 'off'
+  - condition: state
+    entity_id: light.porch
+    state: 'off'
+
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.porch
+
+# Turn Off Porch Light When No Motion Detected
+- id: turn_off_porch_light_no_modect
+  alias: Turn Off Porch Light When No Motion Detected
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_motion_occupancy
+    to: 'off'
+    for: '00:02:00'
+
+  condition:
+  # Only When the Door is already Closed
+  - condition: state
+    entity_id: binary_sensor.front_door_door_contact
+    state: 'off'
+  - condition: state
+    entity_id: light.porch
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.porch
+
+# Turn Off Diningroom Fan When No Motion Detected
+- id: turn_off_diningroom_fan_no_modect
+  alias: Turn Off Diningroom Fan When No Motion Detected
+
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.diningroom_motion_occupancy
+    to: 'off'
+    for: '00:30:00'
+
+  condition:
+  - condition: state
+    entity_id: light.diningroom_fan
+    state: 'on'
+
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.diningroom_fan

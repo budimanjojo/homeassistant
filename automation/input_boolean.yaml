@@ -1,0 +1,157 @@
+##########################################################################i
+## Input Boolean Automations
+###########################################################################
+
+# # JOJO Bathroom is Occupied if Motion Detected
+# - id: jojo_bathroom_occupied_modect
+#   alias: JOJO Bathroom is Occupied if Motion Detected
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.jojo_bathroom_motion_occupancy
+#     to: 'on'
+#
+#   action:
+#   - service: input_boolean.turn_on
+#     target:
+#       entity_id: input_boolean.jojo_bathroom_occupied
+#
+# # Guest Bathroom is Occupied if Motion Detected
+# - id: guest_bathroom_occupied_modect
+#   alias: JOJO Bathroom is Occupied if Motion Detected
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.guest_bathroom_motion_occupancy
+#     to: 'on'
+#
+#   action:
+#   - service: input_boolean.turn_on
+#     target:
+#       entity_id: input_boolean.guest_bathroom_occupied
+#
+# # JOJO Bathroom is Unoccupied if No Motion Detected
+# - id: jojo_bathroom_unoccupied_no_modect
+#   alias: JOJO Bathroom is Unoccupied if No Motion Detected
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.jojo_bathroom_motion_occupancy
+#     to: 'off'
+#     for: '00:05:00'
+#
+#   action:
+#   - service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.jojo_bathroom_occupied
+#
+# # Guest Bathroom is Unoccupied if No Motion Detected
+# - id: guest_bathroom_unoccupied_no_modect
+#   alias: Guest Bathroom is Unoccupied if No Motion Detected
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.guest_bathroom_motion_occupancy
+#     to: 'off'
+#     for: '00:05:00'
+#
+#   action:
+#   - service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.guest_bathroom_occupied
+#
+# # JOJO Bathroom is Occupied if Door Become Closed
+# - id: jojo_bathroom_occupied_door_closed
+#   alias: JOJO Bathroom is Occupied if Door Become Closed
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.jojo_bathroom_door_contact
+#     from: 'on'
+#     to: 'off'
+#
+#   condition:
+#   - condition: state
+#     entity_id: binary_sensor.jojo_bathroom_motion_occupancy
+#     state: 'on'
+#
+#   action:
+#   - service: input_boolean.turn_on
+#     target:
+#       entity_id: input_boolean.jojo_bathroom_occupied
+#
+# # Guest Bathroom is Occupied if Door Become Closed
+# - id: guest_bathroom_occupied_door_closed
+#   alias: Guest Bathroom is Occupied if Door Become Closed
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.guest_bathroom_door_contact
+#     from: 'on'
+#     to: 'off'
+#
+#   condition:
+#   - condition: state
+#     entity_id: binary_sensor.guest_bathroom_motion_occupancy
+#     state: 'on'
+#
+#   action:
+#   - service: input_boolean.turn_on
+#     target:
+#       entity_id: input_boolean.guest_bathroom_occupied
+#
+# # JOJO Bathroom is Unoccupied if Door Become Opened
+# - id: jojo_bathroom_unoccupied_door_opened
+#   alias: JOJO Bathroom is Unoccupied if Door Become Opened
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.jojo_bathroom_door_contact
+#     from: 'off'
+#     to: 'on'
+#     for: '00:01:00'
+#
+#   action:
+#   - service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.jojo_bathroom_occupied
+#
+# # Guest Bathroom is Unoccupied if Door Become Opened
+# - id: guest_bathroom_unoccupied_door_opened
+#   alias: Guest Bathroom is Unoccupied if Door Become Opened
+#
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.guest_bathroom_door_contact
+#     from: 'off'
+#     to: 'on'
+#     for: '00:01:00'
+#
+#   action:
+#   - service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.guest_bathroom_occupied
+#
+# # JOJO Bathroom is Occupied if Someone is Having a Shower
+# - id: jojo_bathroom_occupied_having_shower
+#   alias: JOJO Bathroom is Occupied if Someone is Having a Shower
+#
+#   trigger:
+#   - platform: numeric_state
+#     entity_id: sensor.jojo_bathroom_temp_humidity
+#     above: 60
+#
+#   condition:
+#   - condition: or
+#     conditions:
+#     - condition: state
+#       entity_id: binary_sensor.jojo_bathroom_door_contact
+#       state: 'off'
+#     - condition: state
+#       entity_id: binary_sensor.jojo_bathroom_motion_occupancy
+#       state: 'on'
+#
+#   action:
+#   - service: input_boolean.turn_on
+#     target:
+#       entity_id: input_boolean.jojo_bathroom_occupied

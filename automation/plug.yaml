@@ -1,0 +1,44 @@
+#############################################################################
+## Plug Automations
+#############################################################################
+
+# Turn On Livingroom Plug When Tablet Battery is Below 50%
+- id: turn_on_livingroom_plug_when_tablet_battery_below_50
+  alias: Turn On Livingroom Plug When Tablet Battery is Below 50%
+
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.fire_tablet_battery_level
+    below: '50'
+
+  condition:
+  - condition: state
+    entity_id: switch.1st_livingroom_plug_switch
+    state: 'off'
+
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.1st_livingroom_plug_switch
+
+# Turn Off Livingroom Plug When Tablet Battery is Above 90%
+- id: turn_off_livingroom_plug_when_tablet_battery_above_90
+  alias: Turn Off Livingroom Plug When Tablet Battery is Above 90%
+
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.fire_tablet_battery_level
+    above: '90'
+
+  condition:
+  - condition: state
+    entity_id: binary_sensor.fire_tablet_plugged_in
+    state: 'on'
+  - condition: state
+    entity_id: switch.1st_livingroom_plug_switch
+    state: 'on'
+
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.1st_livingroom_plug_switch

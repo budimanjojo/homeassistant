@@ -1,0 +1,69 @@
+##########################################################################i
+## Deebot Vacuum Automations
+###########################################################################
+
+# Change Deebot Water Flow Level
+- id: deebot_change_water_level
+  alias: Change Deebot Water Flow Level
+
+  trigger:
+  - platform: state
+    entity_id: input_select.vacuum_water_level
+
+  action:
+  - service: vacuum.send_command
+    data_template:
+      command: set_water_level
+      entity_id: vacuum.fatimah
+      params:
+        {"level": "{{ states('input_select.vacuum_water_level') }}"}
+
+# Deebot Clean Custom Area on the Map Based on Coordinate
+# - alias: Deebot Clean Coordinate Area on Map
+#   trigger:
+#   - platform: state
+#     entity_id: input_select.vacuum_clean_area
+#   condition: []
+#   action:
+#   - service: vacuum.send_command
+#     data_template:
+#       command: spot_area
+#       entity_id: vacuum.fatimah
+#       params:
+#         map: >
+#           {% if is_state('input_select.vacuum_clean_area', 'livingroom') %}
+#             "-1878.4346,494.534,14125.0,-3886.3008"
+#           {% elif is_state('input_select.vacuum_clean_area', 'bedroom') %}
+#             "-2747.0,3950.0,96.0,657.0"
+#           {% elif is_state('input_select.vacuum_clean_area', 'kitchen') %}
+#             "7134.4463,5495.6504,14256.583,1319.5243"
+#           {% elif is_state('input_select.vacuum_clean_area', 'hallway') %}
+#             "4129.8174,5038.881,7030.878,445.70703"
+#           {% endif %}
+- id: deebot_clean_custom_area_coordinate
+  alias: Deebot Clean Custom Area on the Map Based on Coordinate
+
+  trigger:
+  - platform: state
+    entity_id: input_select.vacuum_clean_area
+
+  action:
+  - service: vacuum.send_command
+    data_template:
+      command: spot_area
+      entity_id: vacuum.fatimah
+      params: >
+        {% if is_state('input_select.vacuum_clean_area', 'livingroom') %}
+          {"map": "3949.5774,639.9346,-570.5156,-15631.859"}
+        {% elif is_state('input_select.vacuum_clean_area', 'bedroom') %}
+          {"map": "5542.7188,-1620.4849,3737.7664,-3532.2202"}
+        {% elif is_state('input_select.vacuum_clean_area', 'kitchen') %}
+          {"map": "8804.592,-8614.673,4526.031,-15048.343"}
+        {% elif is_state('input_select.vacuum_clean_area', 'hallway') %}
+          {"map": "8319.0,-5550.0,3783.0,-8478.0"}
+        {% endif %}
+  - service: input_select.select_option
+    target:
+      entity_id: input_select.vacuum_clean_area
+    data:
+      option: 'nothing'

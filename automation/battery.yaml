@@ -1,0 +1,48 @@
+##################################################################
+## Battery Automations
+##################################################################
+
+# Notify When Battery is Low for CR2450 Powered Devices
+- id: notity_battery_low_cr2450
+  alias: Notify When Battery is Low for CR2450 Powered Devices
+
+  trigger:
+  - platform: numeric_state
+    entity_id: group.battery_cr2450
+    below: 6
+    for: '01:00:00'
+
+  action:
+    service: notify.apprise_telegram
+    data:
+      message: "The {{ trigger.to_state.name }} is at {{ trigger.to_state.state }}%, it uses a CR2450 3V battery"
+
+# Notify When Battery is Low for CR2032 Powered Devices
+- id: notity_battery_low_cr2032
+  alias: Notify When Battery is Low for CR2450 Powered Devices
+
+  trigger:
+  - platform: numeric_state
+    entity_id: group.battery_cr2032
+    below: 6
+    for: '01:00:00'
+
+  action:
+    service: notify.apprise_telegram
+    data:
+      message: "The {{ trigger.to_state.name }} is at {{ trigger.to_state.state }}%, it uses a CR2032 3V battery"
+
+# Notify When Battery is Low for CR1632 Powered Devices
+- id: notity_battery_low_cr1632
+  alias: Notify When Battery is Low for CR1632 Powered Devices
+
+  trigger:
+  - platform: numeric_state
+    entity_id: group.battery_cr1632
+    below: 6
+    for: '01:00:00'
+
+  action:
+    service: notify.apprise_telegram
+    data:
+      message: "The {{ trigger.to_state.name }} is at {{ trigger.to_state.state }}%, it uses a CR1632 3V battery"
