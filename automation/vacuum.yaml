@@ -1,4 +1,4 @@
-##########################################################################i
+###########################################################################
 ## Deebot Vacuum Automations
 ###########################################################################
 
@@ -40,6 +40,7 @@
 #           {% elif is_state('input_select.vacuum_clean_area', 'hallway') %}
 #             "4129.8174,5038.881,7030.878,445.70703"
 #           {% endif %}
+
 - id: deebot_clean_custom_area_coordinate
   alias: Deebot Clean Custom Area on the Map Based on Coordinate
 

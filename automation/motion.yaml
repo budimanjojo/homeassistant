@@ -1,3 +1,7 @@
+###########################################################################
+## Motion Automations
+###########################################################################
+
 # Turn On Porch Light When Motion Detected in Dark
 - id: turn_on_porch_light_modect_dark
   alias: Turn On Porch Light When Motion Detected in Dark
