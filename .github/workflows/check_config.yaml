@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: thgbrb/setup-environment
+      - uses: university-of-york/ds-devtool-setEnvVars@v1
         with:
-          environment-config-file: dummy-secret.env
+          envFile: dummy-secret.env
       - uses: kpucynski/action-ha-config-check@v0.1.0
         with:
           ha_version: "latest"
