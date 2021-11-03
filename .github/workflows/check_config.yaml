@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-environment
+        with:
+          environment-config-file: dummy-secret.env
       - uses: kpucynski/action-ha-config-check@v0.1.0
         with:
           ha_version: "latest"
