@@ -59,17 +59,17 @@ proximity:
     unit_of_measurement: m
 
 opnsense:
-  url: !secret opnsense_api_url
-  api_secret: !secret opnsense_api_secret
-  api_key: !secret opnsense_api_key
+  url: !env_var opnsense_api_url
+  api_secret: !env_var opnsense_api_secret
+  api_key: !env_var opnsense_api_key
   verify_ssl: true
   tracker_interfaces:
   - LAN1
   - SERVER
 
 deebot:
-  username: !secret deebot_username
-  password: !secret deebot_password
+  username: !env_var deebot_username
+  password: !env_var deebot_password
   country: id
   continent: ww
   supported_features:
@@ -96,9 +96,9 @@ browser_mod:
 telegram_bot:
 - platform: webhooks
   trusted_networks: "10.244.0.0/16"
-  api_key: !secret telegram_api_key_0
+  api_key: !env_var telegram_api_key_0
   allowed_chat_ids:
-  - !secret telegram_chat_id_0
+  - !env_var telegram_chat_id_0
 
 
 ####################################################################
@@ -108,7 +108,7 @@ telegram_bot:
 notify:
 - platform: telegram
   name: telegram
-  chat_id: !secret telegram_chat_id_0
+  chat_id: !env_var telegram_chat_id_0
 
 ####################################################################
 ## Includes
