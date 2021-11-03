@@ -1,10 +1,10 @@
 - name: Home
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
+  latitude: !env_var home_latitude
+  longitude: !env_var home_longitude
   radius: 25
   icon: mdi:home
 - name: Shop
-  latitude: !secret shop_latitude
-  longitude: !secret shop_longitude
+  latitude: !env_var shop_latitude
+  longitude: !env_var shop_longitude
   radius: 25
   icon: mdi:store
