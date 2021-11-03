@@ -14,13 +14,11 @@ This repository contains my Home Assistant configuration files. I deploy Home As
 
 Secrets are environment variable that is deployed from my Flux managed Kubernetes cluster that you can look at [here](https://github.com/budimanjojo/home-cluster/blob/main/cluster/apps/homeassistant/secret.yaml).
 
-[Secret file](./secrets.yaml) is encrypted using [SOPS](https://github.com/mozilla/sops) and will be decrypted before getting pushed into my Home Assistant container volume.
-
 ---
 
 ## :handshake:&nbsp; Thanks
 
-Special thanks for [alex](https://github.com/alexwaibal) for the tips for pushing repository into HAss container.
+Special thanks to [alex](https://github.com/alexwaibal) for the tips I use to push repository changes into HAss container.
 
 ---
 
