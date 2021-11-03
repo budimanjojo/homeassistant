@@ -6,7 +6,7 @@
 
 ## :book:&nbsp; Overview
 
-This repository contains my Home Assistant configuration files. I deploy Home Assistant using Kubernetes which is managed by Flux [here](https://github.com/budimanjojo/home-cluster). Changes in this repository will be pushed to my Home Assistant container using [this automation](./automation/update_config.yaml).
+This repository contains my Home Assistant configuration files. I deploy Home Assistant using Kubernetes which is managed by Flux [here](https://github.com/budimanjojo/home-cluster). Changes in this repository will be pushed to my Home Assistant container using [this automation](./automation/update_config.yaml). Commit message that contains `[skip webhook]` will not trigger the pushing action.
 
 ---
 
