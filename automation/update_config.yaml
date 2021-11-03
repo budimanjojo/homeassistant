@@ -1,0 +1,15 @@
+###########################################################
+## Update Config Automations
+###########################################################
+
+# Update Configuration on Github Push Event
+- id: update_config_github_push_event
+  alias: Update Configuration on Github Push Event
+
+  trigger:
+  - platform: webhook
+    webhook_id: update_config
+
+  action:
+  - service: shell_command.update_config
+  - service: homeassistant.restart

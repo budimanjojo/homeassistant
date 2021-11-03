@@ -129,3 +129,4 @@ person: !include configurations/persons.yaml
 recorder: !include configurations/recorder.yaml
 light: !include configurations/lights.yaml
 template: !include configurations/templates.yaml
+shell_command: !include configurations/shell_commands.yaml
