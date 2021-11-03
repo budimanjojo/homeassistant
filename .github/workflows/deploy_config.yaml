@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy_config:
-    if: "!contains(github.envent.commit[0].message, '[skip webhook]')"
+    if: "!contains(github.event.commit[0].message, '[skip webhook]')"
     runs-on: ubuntu-latest
     steps:
       - uses: joelwmale/webhook-action@2.1.0
