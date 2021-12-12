@@ -26,7 +26,7 @@ lovelace:
     type: module
   - url: /hacsfiles/lovelace-card-mod/card-mod.js
     type: module
-  - url: /hacsfiles/vacuum-card/vacuum-card.js?hacstag=2612912951230
+  - url: /hacsfiles/vacuum-card/vacuum-card.js
     type: module
   - url: /hacsfiles/zigbee2mqtt-networkmap/zigbee2mqtt-networkmap.js
     type: module
