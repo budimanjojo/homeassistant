@@ -18,7 +18,7 @@ http:
 ####################################################################
 
 lovelace:
-  mode: storage
+  mode: yaml
   resources:
   - url: /hacsfiles/button-card/button-card.js
     type: module
