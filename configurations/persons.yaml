@@ -24,7 +24,7 @@
 - name: Haryanto
   id: haryanto
   device_trackers:
-  - !env_var opnsense.haryanto
+  - !env_var opnsense_haryanto
 
 - name: Sai Pein
   id: sai_pein
