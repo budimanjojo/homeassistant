@@ -4,11 +4,11 @@
 
 - platform: switch
   name: JOJO Bedroom 2
-  entity_id: switch.jojo_bedroom_2_l1
+  entity_id: switch.jojo_bedroom_2_right
 
 - platform: switch
   name: JOJO Bathroom
-  entity_id: switch.jojo_bedroom_2_l2
+  entity_id: switch.jojo_bedroom_2_left
 
 - platform: switch
   name: Front Outdoor
