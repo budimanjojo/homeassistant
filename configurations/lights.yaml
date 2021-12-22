@@ -16,7 +16,7 @@
 
 - platform: switch
   name: Porch
-  entity_id: switch.front_door_1_l2
+  entity_id: switch.front_door_1_left
 
 - platform: switch
   name: Guest Hallway
