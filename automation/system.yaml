@@ -1,0 +1,16 @@
+#############################################################################
+## System Automations
+#############################################################################
+
+# Reload Fully Kiosk Browser on Hass Restart
+- id: reload_fully_kiosk_browser_hass_restart
+  alias: Reload Fully Kiosk Browser on HAss Restart
+
+  trigger:
+  - platform: homeassistant
+    event: start
+
+  action:
+  - service: fullykiosk.load_start_url
+    data:
+      entity_id: media_player.fire_tablet_media_player
