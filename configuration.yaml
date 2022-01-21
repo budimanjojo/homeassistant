@@ -94,12 +94,11 @@ browser_mod:
   - all
 
 telegram_bot:
-- platform: polling
+- platform: broadcast
   trusted_networks: "10.244.0.0/16"
   api_key: !env_var telegram_api_key_0
   allowed_chat_ids:
   - !env_var telegram_chat_id_0
-
 
 ####################################################################
 ## Notifications
