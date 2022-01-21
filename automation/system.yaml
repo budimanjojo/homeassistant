@@ -11,6 +11,6 @@
     event: start
 
   action:
-  - service: fullykiosk.load_start_url
-    data:
-      entity_id: media_player.fire_tablet_media_player
+  - service: button.press
+    target:
+      entity_id: button.fire_tablet_load_start_url
