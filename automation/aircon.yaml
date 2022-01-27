@@ -22,4 +22,4 @@
       entity_id: remote.jojo_bedroom_rm4_mini_remote
     data:
       device: jojo_bedroom_ac
-      command: power_on
+      command: power_off
