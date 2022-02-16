@@ -12,7 +12,7 @@
 
   condition:
   - condition: time
-    after: '18:59:59'
+    after: '17:59:59'
     before: '04:00:01'
   - condition: state
     entity_id: light.front_outdoor
