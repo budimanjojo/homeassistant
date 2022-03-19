@@ -5,7 +5,6 @@
 homeassistant:
   customize: !include configurations/customize.yaml
 default_config:
-updater:
 discovery:
 stream:
 http:
