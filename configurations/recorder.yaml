@@ -5,10 +5,12 @@ exclude:
   - automation
   - input_number
   - input_text
-  - person
   entities:
   - binary_sensor.updater
   - binary_sensor.zigbee_router_cc2531_led
   entity_globs:
   - sensor.date*
   - sensor.time*
+db_url: !env_var postgresql_uri
+auto_purge: true
+purge_keep_days: 14
