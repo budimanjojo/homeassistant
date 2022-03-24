@@ -1,6 +1,5 @@
 - name: Budiman
   id: budiman
-  user_id: b605f353a26047fc909438057bc85cf4
   device_trackers:
   - !env_var opnsense_budiman
   - device_tracker.jojo_mobile_app
