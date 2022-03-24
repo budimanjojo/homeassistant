@@ -2,13 +2,13 @@
   id: budiman
   device_trackers:
   - !env_var opnsense_budiman
-  - device_tracker.jojo_mobile_app
+  - device_tracker.oneplus_a6010
 
 - name: Lina
   id: lina
   device_trackers:
   - !env_var opnsense_lina
-  - device_tracker.lina_mobile_app
+  - device_tracker.sm_g975f
 
 - name: Eunice
   id: eunice
