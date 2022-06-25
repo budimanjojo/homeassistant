@@ -17,9 +17,6 @@
   - condition: state
     entity_id: light.front_outdoor
     state: 'off'
-  - condition: state
-    entity_id: group.everybody
-    state: 'home'
 
   action:
   - service: light.turn_on
