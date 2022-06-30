@@ -96,10 +96,6 @@
     entity_id: light.porch
     state: 'on'
     for: '00:20'
-  # Only When the Door is already Closed
-  - condition: state
-    entity_id: binary_sensor.front_door_door_contact
-    state: 'off'
 
   action:
   - service: light.turn_off
