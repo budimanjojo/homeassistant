@@ -3,6 +3,13 @@
 ####################################################################
 
 homeassistant:
+  name: Home
+  latitude: !env_var home_latitude
+  longitude: !env_var home_longitude
+  elevation: 24
+  unit_system: metric
+  currency: IDR
+  time_zone: !env_var TZ
   customize: !include configurations/customize.yaml
 default_config:
 discovery:
