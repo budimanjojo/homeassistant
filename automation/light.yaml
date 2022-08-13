@@ -11,9 +11,9 @@
     minutes: '/5'
 
   condition:
-  - condition: time
-    after: '17:59:59'
-    before: '04:00:01'
+  - condition: sun
+    after: sunset
+    before: sunrise
   - condition: state
     entity_id: light.front_outdoor
     state: 'off'
@@ -28,10 +28,13 @@
   alias: Turn Off Front Outdoor Light in the Morning
 
   trigger:
-  - platform: time
-    at: '05:00:00'
+  - platform: time_pattern
+    minutes: '/5'
 
   condition:
+  - condition: sun
+    after: sunrise
+    before: sunset
   - condition: state
     entity_id: light.front_outdoor
     state: 'on'
@@ -50,9 +53,9 @@
     minutes: '/5'
 
   condition:
-  - condition: time
-    after: '17:29:59'
-    before: '04:00:01'
+  - condition: sun
+    after: sunset
+    before: sunrise
   - condition: state
     entity_id: light.front_staircase
     state: 'off'
@@ -70,10 +73,13 @@
   alias: Turn Off Front Staircase Light in the Morning
 
   trigger:
-  - platform: time
-    at: '05:00:00'
+  - platform: time_pattern
+    minutes: '/5'
 
   condition:
+  - condition: sun
+    after: sunrise
+    before: sunset
   - condition: state
     entity_id: light.front_staircase
     state: 'on'
