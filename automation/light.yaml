@@ -11,8 +11,9 @@
     minutes: '/5'
 
   condition:
-  - condition: sun
-    after: sunset
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
   - condition: state
     entity_id: light.front_outdoor
     state: 'off'
@@ -31,8 +32,9 @@
     minutes: '/5'
 
   condition:
-  - condition: sun
-    after: sunrise
+  - condition: state
+    entity_id: sun.sun
+    state: "above_horizon"
   - condition: state
     entity_id: light.front_outdoor
     state: 'on'
@@ -51,8 +53,9 @@
     minutes: '/5'
 
   condition:
-  - condition: sun
-    after: sunset
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
   - condition: state
     entity_id: light.front_staircase
     state: 'off'
@@ -74,8 +77,9 @@
     minutes: '/5'
 
   condition:
-  - condition: sun
-    after: sunrise
+  - condition: state
+    entity_id: sun.sun
+    state: "above_horizon"
   - condition: state
     entity_id: light.front_staircase
     state: 'on'
