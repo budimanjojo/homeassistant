@@ -195,9 +195,9 @@
     minutes: '/5'
 
   condition:
-  - condition: time
-    after: '18:59:59'
-    before: '23:00:01'
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
   - condition: state
     entity_id: light.jojo_bedroom_2
     state: 'off'
@@ -215,8 +215,8 @@
   alias: Turn Off JOJO Bedroom Hallway Light in the Morning
 
   trigger:
-  - platform: time
-    at: '08:00:00'
+  - platform: sun
+    event: sunrise
 
   condition:
   - condition: state
