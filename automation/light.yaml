@@ -8,7 +8,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
@@ -29,7 +29,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
@@ -50,7 +50,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
@@ -74,7 +74,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
@@ -95,7 +95,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
@@ -192,7 +192,7 @@
 
   trigger:
   - platform: time_pattern
-    minutes: '/5'
+    minutes: '/1'
 
   condition:
   - condition: state
