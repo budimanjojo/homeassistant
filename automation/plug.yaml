@@ -8,7 +8,7 @@
 
   trigger:
   - platform: numeric_state
-    entity_id: sensor.fire_tablet_battery_level
+    entity_id: sensor.fire_tablet_battery
     below: '50'
 
   condition:
@@ -27,7 +27,7 @@
 
   trigger:
   - platform: numeric_state
-    entity_id: sensor.fire_tablet_battery_level
+    entity_id: sensor.fire_tablet_battery
     above: '90'
 
   condition:
