@@ -23,13 +23,6 @@
   count: 2
   scan_interval: 30
 
-# Mariadb Database Monitor
-- platform: ping
-  name: Ping mariadb
-  host: mariadb.default.svc.cluster.local
-  count: 2
-  scan_interval: 30
-
 # Redis Database Monitor
 - platform: ping
   name: Ping Redis
