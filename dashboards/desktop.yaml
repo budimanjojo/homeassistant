@@ -859,14 +859,15 @@ views:
       tap_action:
         action: fire-dom-event
         browser_mod:
-          command: popup
+          service: browser_mod.popup
           title: ' '
           hide_header: true
-          card:
-            type: vertical-stack
-            cards:
-            - type: picture
-              image: /local/images/floorplan-images/wifi.png
+          data:
+            content:
+              type: vertical-stack
+              cards:
+              - type: picture
+                image: /local/images/floorplan-images/wifi.png
     - type: image
       image: /local/images/icons/icon-wifi.png
       style:
