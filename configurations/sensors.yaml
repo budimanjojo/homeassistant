@@ -17,15 +17,6 @@
       unit_of_measurement: Hour(s)
 
 ###################################################################################################
-## Zigbee2mqtt Sensors
-###################################################################################################
-- platform: mqtt
-  name: Zigbee2mqtt Networkmap
-  state_topic: zigbee2mqtt/bridge/networkmap/raw
-  value_template: ""
-  json_attributes_topic: zigbee2mqtt/bridge/networkmap/raw
-
-###################################################################################################
 ## Time and Date Sensors
 ###################################################################################################
 - platform: time_date

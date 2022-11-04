@@ -106,6 +106,16 @@ telegram_bot:
   allowed_chat_ids:
   - !env_var telegram_chat_id_0
 
+###################################################################################################
+## Zigbee2mqtt Sensors
+###################################################################################################
+mqtt:
+  sensor:
+  - name: Zigbee2mqtt Networkmap
+    state_topic: zigbee2mqtt/bridge/networkmap/raw
+    value_template: ""
+    json_attributes_topic: zigbee2mqtt/bridge/networkmap/raw
+
 ####################################################################
 ## Notifications
 ####################################################################
