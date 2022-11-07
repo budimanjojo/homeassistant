@@ -18,9 +18,9 @@ jojo_family:
 jojo_bedroom_lights:
   name: JOJO Bedroom Lights
   entities:
-  - light.jojo_bedroom_light_1
-  - light.jojo_bedroom_light_2
-  - light.jojo_bathroom_light
+  - light.jojo_bedroom_1
+  - light.jojo_bedroom_2
+  - light.jojo_bathroom
 
 battery_cr2450:
   name: CR2450 Battery Sensors
