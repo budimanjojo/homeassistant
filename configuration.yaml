@@ -68,7 +68,7 @@ opnsense:
   url: !env_var opnsense_api_url
   api_secret: !env_var opnsense_api_secret
   api_key: !env_var opnsense_api_key
-  verify_ssl: true
+  verify_ssl: false
   tracker_interfaces:
   - LAN1
   - SERVER
