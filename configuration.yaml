@@ -64,15 +64,6 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
-opnsense:
-  url: !env_var opnsense_api_url
-  api_secret: !env_var opnsense_api_secret
-  api_key: !env_var opnsense_api_key
-  verify_ssl: true
-  tracker_interfaces:
-  - LAN1
-  - SERVER
-
 deebot:
   username: !env_var deebot_username
   password: !env_var deebot_password
