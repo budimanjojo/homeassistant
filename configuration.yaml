@@ -11,6 +11,7 @@ homeassistant:
   currency: IDR
   time_zone: !env_var TZ
   customize: !include configurations/customize.yaml
+  country: !env_var country
 default_config:
 discovery:
 stream:
