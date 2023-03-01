@@ -12,9 +12,9 @@
     to: 'on'
 
   condition:
-  - condition: numeric_state
-    entity_id: sensor.front_door_motion_illuminance_lux
-    below: 5
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
   # Only When the Door is Closed
   - condition: state
     entity_id: binary_sensor.front_door_door_contact
