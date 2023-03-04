@@ -15,6 +15,11 @@
   device_trackers:
   - !env_var opnsense_eunice
 
+- name: Eugene
+  id: eugene
+  device_trackers:
+  - !env_var opnsense_eugene
+
 - name: Alimin
   id: alimin
   device_trackers:
