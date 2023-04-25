@@ -62,6 +62,7 @@ proximity:
     - person.budiman
     - person.lina
     - person.eunice
+    - person.eugene
     tolerance: 50
     unit_of_measurement: m
 

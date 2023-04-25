@@ -4,6 +4,7 @@ everybody:
   - person.budiman
   - person.lina
   - person.eunice
+  - person.eugene
   - person.alimin
   - person.sai_pein
   - person.haryanto
@@ -14,6 +15,7 @@ jojo_family:
   - person.budiman
   - person.lina
   - person.eunice
+  - person.eugene
 
 jojo_bedroom_lights:
   name: JOJO Bedroom Lights
