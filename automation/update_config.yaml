@@ -9,6 +9,7 @@
   trigger:
   - platform: webhook
     webhook_id: update_config
+    local_only: false
 
   action:
   - service: shell_command.update_config
