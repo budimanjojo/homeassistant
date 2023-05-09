@@ -19,6 +19,7 @@
   id: eugene
   device_trackers:
   - !env_var opnsense_eugene
+  - device_tracker.oneplus_a6010
 
 - name: Alimin
   id: alimin
