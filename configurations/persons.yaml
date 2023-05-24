@@ -8,7 +8,7 @@
   id: lina
   device_trackers:
   - !env_var opnsense_lina
-  - device_tracker.sm_g975f
+  - device_tracker.sm_g990e
 
 - name: Eunice
   id: eunice
