@@ -9,13 +9,6 @@
   count: 2
   scan_interval: 60
 
-# Kubernetes VIP Monitor
-- platform: command_line
-  name: Ping kube-vip
-  command: '/bin/bash -c "(echo > /dev/tcp/192.168.200.10/8443) > /dev/null 2>&1 && echo ON || echo OFF"'
-  scan_interval: 60
-  device_class: connectivity
-
 # OMV NAS Monitor
 - platform: ping
   name: Ping OMV NAS
