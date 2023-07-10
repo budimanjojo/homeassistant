@@ -66,25 +66,6 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
-deebot:
-  username: !env_var deebot_username
-  password: !env_var deebot_password
-  country: id
-  continent: ww
-  supported_features:
-  - start
-  - pause
-  - stop
-  - return_home
-  - fan_speed
-  - battery
-  - status
-  - send_command
-  - locate
-  - clean_spot
-  - turn_on
-  - turn_off
-
 browser_mod:
   devices:
     bfb3bb0f_d8d3f148:

@@ -1,21 +1,3 @@
-##################################################################################################
-## Deebot 900 Sensors
-##################################################################################################
-- platform: template
-  sensors:
-    fatimah_main_brush_hour:
-      friendly_name: "Vacuum Main Brush Remaining Time"
-      value_template: "{{ (state_attr('vacuum.fatimah', 'component_main_brush')/100)|round|int }}"
-      unit_of_measurement: Hour(s)
-    fatimah_side_brush_hour:
-      friendly_name: "Vacuum Side Brush Remaining Time"
-      value_template: "{{ (state_attr('vacuum.fatimah', 'component_side_brush')/100)|round|int }}"
-      unit_of_measurement: Hour(s)
-    fatimah_filter_hour:
-      friendly_name: "Vacuum Filter Remaining Time"
-      value_template: "{{ (state_attr('vacuum.fatimah', 'component_filter')/100)|round|int }}"
-      unit_of_measurement: Hour(s)
-
 ###################################################################################################
 ## Time and Date Sensors
 ###################################################################################################

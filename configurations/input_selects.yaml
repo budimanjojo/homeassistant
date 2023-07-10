@@ -1,20 +1,3 @@
-vacuum_water_level:
-  name: Amount of Vacuum Mopping Water
-  options:
-  - low
-  - medium
-  - high
-
-vacuum_clean_area:
-  name: Vacuum Custom Area Cleaning
-  initial: nothing
-  options:
-  - nothing
-  - livingroom
-  - bedroom
-  - kitchen
-  - hallway
-
 floorplan_floor:
   name: Floorplan Floor Selection
   icon: mdi:floor-plan
