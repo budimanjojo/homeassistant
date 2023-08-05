@@ -13,7 +13,6 @@ homeassistant:
   customize: !include configurations/customize.yaml
   country: !env_var country
 default_config:
-discovery:
 stream:
 http:
   use_x_forwarded_for: true
