@@ -2,23 +2,3 @@
 ## Binary Sensors
 ##################################################################
 
-# WAN Monitor
-- platform: ping
-  name: Ping WAN
-  host: 8.8.8.8
-  count: 2
-  scan_interval: 60
-
-# OMV NAS Monitor
-- platform: ping
-  name: Ping OMV NAS
-  host: 192.168.200.31
-  count: 2
-  scan_interval: 30
-
-# Redis Database Monitor
-- platform: ping
-  name: Ping Redis
-  host: redis.default.svc.cluster.local
-  count: 2
-  scan_interval: 30
