@@ -55,16 +55,6 @@ lovelace:
 tts:
 - platform: google_translate
 
-proximity:
-  home:
-    devices:
-    - person.budiman
-    - person.lina
-    - person.eunice
-    - person.eugene
-    tolerance: 50
-    unit_of_measurement: m
-
 browser_mod:
   devices:
     bfb3bb0f_d8d3f148:
