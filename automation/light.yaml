@@ -146,7 +146,7 @@
     target:
       entity_id: light.guest_bathroom
 
-# Turn Off JOJO Bathroom Light When Not Occupied
+# Turn Off JOJO Bathroom Light When Not Occupied and Sun is not Set
 - id: turn_off_jojo_bathroom_light_unoccupied
   alias: Turn Off JOJO Bathroom Light When Not Occupied
 
@@ -160,6 +160,9 @@
   - condition: state
     entity_id: light.jojo_bathroom
     state: 'on'
+  - condition: state
+    entity_id: sun.sun
+    state: "above_horizon"
 
   action:
   - service: light.turn_off
@@ -185,30 +188,6 @@
   - service: light.turn_off
     target:
       entity_id: light.guest_bathroom
-
-# Turn On JOJO Bedroom Hallway Light at Night
-- id: turn_on_jojo_bedroom_hallway_light_at_night
-  alias: Turn On JOJO Bedroom Hallway Light at Night
-
-  trigger:
-  - platform: time_pattern
-    minutes: '/1'
-
-  condition:
-  - condition: state
-    entity_id: sun.sun
-    state: "below_horizon"
-  - condition: state
-    entity_id: light.jojo_bedroom_2
-    state: 'off'
-  - condition: state
-    entity_id: group.jojo_family
-    state: 'home'
-
-  action:
-  - service: light.turn_on
-    target:
-      entity_id: light.jojo_bedroom_2
 
 # Turn Off JOJO Bedroom Hallway Light in the Morning
 - id: turn_off_jojo_bedroom_hallway_light_in_morning
