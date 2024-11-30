@@ -2,7 +2,7 @@
   id: budiman
   device_trackers:
   - !env_var opnsense_budiman
-  - device_tracker.oneplus_9_2
+  - device_tracker.poco_f6_2
 
 - name: Lina
   id: lina
