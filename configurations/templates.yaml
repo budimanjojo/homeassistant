@@ -5,14 +5,6 @@
     state: >
       {% if is_state('binary_sensor.jojo_bathroom_motion_occupancy', 'on') %}
         on
-      {% elif is_state('binary_sensor.jojo_bathroom_door_contact', 'off')
-        and is_state('binary_sensor.jojo_bathroom_motion_occupancy', 'on') %}
-          on
-      {% elif states('sensor.jojo_bathroom_temp_humidity')|int > 60 %}
-        {% if is_state('binary_sensor.jojo_bathroom_motion_occupancy', 'on')
-          or is_state('binary_sensor.jojo_bathroom_door_contact', 'off') %}
-            on
-        {% endif %}
       {% else  %}
         off
       {% endif %}
@@ -24,9 +16,6 @@
     state: >
       {% if is_state('binary_sensor.guest_bathroom_motion_occupancy', 'on') %}
         on
-      {% elif is_state('binary_sensor.guest_bathroom_door_contact', 'off')
-        and is_state('binary_sensor.guest_bathroom_motion_occupancy', 'on') %}
-          on
       {% else %}
         off
       {% endif %}
