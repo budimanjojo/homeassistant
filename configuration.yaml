@@ -55,13 +55,6 @@ lovelace:
 tts:
 - platform: google_translate
 
-browser_mod:
-  devices:
-    bfb3bb0f_d8d3f148:
-      name: fire_hd
-  disable:
-  - all
-
 telegram_bot:
 - platform: broadcast
   trusted_networks: "10.244.0.0/16"
